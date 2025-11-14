@@ -17,6 +17,7 @@ struct PersonalFitnessTrackerApp: App {
     private let planParserService: PlanParserService
     private let workoutTimerService: WorkoutTimerService
     private let audioNotificationService: AudioNotificationService
+    private let prebuiltPlansService: PrebuiltPlansService
     
     // MARK: - Initialization
     
@@ -35,6 +36,30 @@ struct PersonalFitnessTrackerApp: App {
         self.planParserService = PlanParserService()
         self.workoutTimerService = WorkoutTimerService()
         self.audioNotificationService = AudioNotificationService()
+        self.prebuiltPlansService = PrebuiltPlansService(
+            planParser: planParserService,
+            planRepository: planRepository
+        )
+        
+        // Load pre-built workout plans on first launch
+        loadPrebuiltPlansIfNeeded()
+    }
+    
+    // MARK: - Private Methods
+    
+    private func loadPrebuiltPlansIfNeeded() {
+        let hasLoadedPrebuiltPlans = UserDefaults.standard.bool(forKey: "hasLoadedPrebuiltPlans")
+        
+        print("🚀 App initialization - hasLoadedPrebuiltPlans: \(hasLoadedPrebuiltPlans)")
+        
+        if !hasLoadedPrebuiltPlans {
+            print("📥 Loading pre-built plans for the first time...")
+            prebuiltPlansService.loadPrebuiltPlans()
+            UserDefaults.standard.set(true, forKey: "hasLoadedPrebuiltPlans")
+            print("✅ Pre-built plans loading complete")
+        } else {
+            print("⏭️ Pre-built plans already loaded, skipping")
+        }
     }
     
     // MARK: - Scene
