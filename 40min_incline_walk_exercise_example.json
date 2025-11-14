@@ -1,0 +1,119 @@
+{
+  "name": "Perfect 40-Minute Incline Walk (Personalized)",
+  "version": "1.0",
+  "author": "ChatGPT (based on user's inputs)",
+  "total_duration_minutes": 40,
+  "user_profile": {
+    "age": 37,
+    "weight_lbs": 206,
+    "height_ft_in": "6'2\"",
+    "typical_session": {
+      "incline_percent": 8,
+      "speed_mph": 2.8,
+      "avg_hr_bpm": 144
+    }
+  },
+  "steps": [
+    {
+      "id": 1,
+      "name": "Warm-up",
+      "start_min": 0,
+      "end_min": 5,
+      "duration_min": 5,
+      "speed_mph": 2.7,
+      "incline_percent": 4,
+      "target_hr_bpm": {
+        "min": 105,
+        "max": 115
+      },
+      "notes": "Slow steady warm-up to raise core temperature and prepare muscles."
+    },
+    {
+      "id": 2,
+      "name": "Main steady - block 1",
+      "start_min": 5,
+      "end_min": 25,
+      "duration_min": 20,
+      "speed_mph": [
+        2.8,
+        2.9
+      ],
+      "incline_percent": [
+        5,
+        6
+      ],
+      "target_hr_bpm": {
+        "min": 118,
+        "max": 128
+      },
+      "notes": "Sustained Zone 2\u20133 effort for fat-burning and aerobic conditioning."
+    },
+    {
+      "id": 3,
+      "name": "Main steady - block 2",
+      "start_min": 25,
+      "end_min": 35,
+      "duration_min": 10,
+      "speed_mph": [
+        2.9,
+        3.0
+      ],
+      "incline_percent": [
+        6,
+        7
+      ],
+      "target_hr_bpm": {
+        "min": 125,
+        "max": 135
+      },
+      "notes": "Slightly higher intensity to raise cardiac stimulus while remaining steady-state."
+    },
+    {
+      "id": 4,
+      "name": "Optional finish (accelerator)",
+      "start_min": 35,
+      "end_min": 40,
+      "duration_min": 5,
+      "speed_mph": 2.8,
+      "incline_percent": 8,
+      "target_hr_bpm": {
+        "min": 135,
+        "max": 145
+      },
+      "optional": true,
+      "notes": "Optional 5-minute spike for increased calorie burn and cardiovascular load."
+    },
+    {
+      "id": 5,
+      "name": "Cooldown (suggested)",
+      "start_min": 40,
+      "end_min": 45,
+      "duration_min": 5,
+      "speed_mph": [
+        2.5,
+        1.5
+      ],
+      "incline_percent": [
+        4,
+        0
+      ],
+      "target_hr_bpm": {
+        "min": 100,
+        "max": 110
+      },
+      "notes": "Gradual decline of speed and incline to return heart rate toward resting. (Post-treadmill stretching recommended.)"
+    }
+  ],
+  "estimated_calories_burn_range": {
+    "min": 300,
+    "max": 450,
+    "units": "kcal"
+  },
+  "goals": [
+    "fat_loss",
+    "lower_resting_hr",
+    "aerobic_conditioning",
+    "sustainable_effort"
+  ],
+  "notes": "Designed for steady-state incline walking with occasional short intensity spikes. Adjust speeds/incline to keep heart rate in target ranges."
+}
